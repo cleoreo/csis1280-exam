@@ -3,6 +3,9 @@ var hour24Format = false;
 (function() {
     document.getElementById("toggle-btn").addEventListener("click", function(){
         hour24Format = !hour24Format;
+        const clockDiv = document.getElementsByClassName("clock")[0];
+        clockDiv.classList.toggle("grid--3-col");
+        clockDiv.classList.toggle("grid--4-col");
         const sessionStrDiv = document.getElementsByClassName("session")[0];
         sessionStrDiv.style.display = hour24Format? 'none' : 'block';
         document.getElementById("toggle-btn").innerText = hour24Format? "12-hr": "24-hr";
